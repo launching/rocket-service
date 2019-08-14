@@ -1,0 +1,20 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "password",
+    "database": "rocket",
+    "entities": ["server/api/entity/*.ts"],
+    "migrations": [
+        "server/api/migration/*.ts"
+    ],
+    "logging": true,
+    "insecureAuth" : true,
+    "synchronize": true,
+    "cli": {
+        "entitiesDir": "server/api/entity",
+        "migrationsDir": "server/api/migration",
+        "subscribersDir": "server/api/subscriber"
+    }
+  }
