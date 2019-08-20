@@ -4,11 +4,6 @@ info:
   title: rocket-service
   description: My cool TypeScript app
 basePath: /api/v1
-tags:
-  - name: Examples
-    description: Simple example endpoints
-  - name: Specification
-    description: The swagger API specification
 
 consumes:
   - application/json
@@ -26,7 +21,18 @@ definitions:
       name:
         type: string
         example: no_stress
-
+  UserBody:
+    title: user
+    required:
+      - name
+      - password
+    properties:
+      name:
+        type: string
+        example: zhangshan
+      password:
+        type: string
+        example: "123456"
 paths:
   /examples:
     get:
@@ -83,3 +89,18 @@ paths:
       responses:
         200:
           description: Returns all users
+    post:
+      tags: 
+        - Users
+      description: Creates a new user
+      operationId: addUser
+      parameters:
+        - name: user
+          in: body
+          description: add a user
+          required: true
+          schema: 
+            $ref: "#/definitions/UserBody"
+      responses:
+        200:
+          description: Return all users

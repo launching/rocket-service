@@ -31,7 +31,6 @@ export default function (app: Application, routes: (app: Application) => void) {
     app.use(
       middleware.CORS(),
       middleware.validateRequest());
-
     routes(app);
 
     // eslint-disable-next-line no-unused-vars, no-shadow

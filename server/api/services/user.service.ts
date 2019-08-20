@@ -17,7 +17,17 @@ export class UserService {
     return false;
   }
 
+  async all(): Promise<User[]> {
+    return await userRepository.find()
+  }
+
+  async findById(user: User): Promise<User> {
+    return await userRepository.findOne(user.id);
+  }
+
   async findByLoginName(loginName: string): Promise<User[]> {
     return await userRepository.find({ loginName: Equal(loginName) });
   }
 }
+
+export default new UserService();

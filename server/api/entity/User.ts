@@ -24,7 +24,7 @@ export class User extends BaseEntity {
   @Column()
   password: string;
 
-  @Column()
+  @Column({default: 'admin'})
   role: string;
 
   @Column()
@@ -52,6 +52,11 @@ export class User extends BaseEntity {
     if (!this.lastLoginTime) {
       this.lastLoginTime = this.createTime;
     }
+  }
+
+  @BeforeInsert() 
+  setDefaultVserName () {
+    this.vsername = this.vsername || this.loginName;
   }
 
   hashPassword(): void {

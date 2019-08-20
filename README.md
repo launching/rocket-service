@@ -89,3 +89,6 @@ npm run test:debug
 #### Debug with VSCode
 
 Add these [contents](https://github.com/cdimascio/generator-express-no-stress/blob/next/assets/.vscode/launch.json) to your `.vscode/launch.json` file
+
+## Swagger
+https://github.com/APIDevTools/swagger-express-middleware/blob/master/samples/PetStore.yaml
