@@ -37,7 +37,7 @@
     "swagger-express-middleware": "^2.0.1",
     "swagger-jsdoc": "^3.4.0",
     "ts-node-dev": "^1.0.0-pre.40",
-    "typeorm": "^0.2.18"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
